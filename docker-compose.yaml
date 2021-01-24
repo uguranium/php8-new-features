@@ -1,0 +1,15 @@
+version: '3'
+
+networks:
+  php8test:
+
+services:
+  php-apache:
+    image: php:8.0.1-apache
+    container_name: php-apache
+    volumes:
+      - .:/var/www/html
+    ports:
+      - "8080:80"
+    networks:
+      - php8test
